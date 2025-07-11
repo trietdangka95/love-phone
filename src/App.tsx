@@ -11,6 +11,7 @@ import CartPage from './pages/CartPage';
 import AboutPage from './pages/AboutPage';
 import ContactPage from './pages/ContactPage';
 import RegisterPage from './pages/RegisterPage';
+import ProductsPage from './pages/ProductsPage';
 import './App.css';
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
                 <Route path="/about" element={<AboutPage />} />
                 <Route path="/contact" element={<ContactPage />} />
                 <Route path="/register" element={<RegisterPage />} />
+                <Route path="/products" element={<ProductsPage />} />
               </Routes>
             </main>
             <Footer />
