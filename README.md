@@ -1,46 +1,200 @@
-# Getting Started with Create React App
+# 🛒 Love Phone - Web Bán Hàng
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Dự án web bán hàng được xây dựng với React.js, Redux Toolkit và Tailwind CSS.
 
-## Available Scripts
+## 🚀 Tính năng
 
-In the project directory, you can run:
+### ✅ Đã hoàn thành
+- [x] **Authentication**: Đăng nhập/Đăng ký với JWT
+- [x] **Redux Store**: Quản lý state với Redux Toolkit + Redux Persist
+- [x] **Product Management**: Hiển thị danh sách sản phẩm
+- [x] **Shopping Cart**: Thêm/xóa/cập nhật giỏ hàng
+- [x] **Responsive Design**: Giao diện đẹp với Tailwind CSS
+- [x] **Routing**: Điều hướng với React Router DOM
 
-### `npm start`
+### 🔄 Đang phát triển
+- [ ] Trang đăng ký
+- [ ] Trang chi tiết sản phẩm
+- [ ] Trang thanh toán
+- [ ] Trang đơn hàng
+- [ ] Tìm kiếm và lọc sản phẩm
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## 🛠️ Công nghệ sử dụng
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+| Thành phần | Công nghệ |
+|------------|-----------|
+| Frontend | React.js + TypeScript |
+| State Management | Redux Toolkit + Redux Persist |
+| Routing | React Router DOM |
+| UI Framework | Tailwind CSS |
+| Icons | Heroicons |
+| Form Validation | React Hook Form + Yup |
 
-### `npm test`
+## 📦 Cài đặt và chạy
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Yêu cầu hệ thống
+- Node.js >= 16
+- npm >= 7
 
-### `npm run build`
+### Bước 1: Clone dự án
+```bash
+git clone <repository-url>
+cd love-phone
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Bước 2: Cài đặt dependencies
+```bash
+npm install
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Bước 3: Chạy dự án
+```bash
+npm start
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Dự án sẽ chạy tại: http://localhost:3000
 
-### `npm run eject`
+## 📁 Cấu trúc thư mục
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```
+src/
+├── components/          # Components tái sử dụng
+│   ├── ui/             # UI components (Button, Input, etc.)
+│   ├── layout/         # Layout components (Header, Footer)
+│   ├── product/        # Product-related components
+│   ├── cart/           # Cart components
+│   └── auth/           # Authentication components
+├── pages/              # Page components
+├── store/              # Redux store
+│   └── slices/         # Redux slices
+├── types/              # TypeScript type definitions
+├── services/           # API services
+├── utils/              # Utility functions
+└── hooks/              # Custom React hooks
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 🔧 Redux Store Structure
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### Auth Slice
+- Quản lý đăng nhập/đăng ký
+- Lưu trữ token và thông tin user
+- Persist authentication state
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### Cart Slice
+- Quản lý giỏ hàng
+- Thêm/xóa/cập nhật sản phẩm
+- Tính tổng tiền
+- Persist cart state
 
-## Learn More
+### Product Slice
+- Quản lý danh sách sản phẩm
+- Chi tiết sản phẩm
+- Loading states
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Order Slice
+- Quản lý đơn hàng
+- Lịch sử đơn hàng
+- Trạng thái đơn hàng
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 🎨 UI Components
+
+### Button Component
+```tsx
+<Button 
+  variant="primary" 
+  size="md" 
+  loading={false}
+  onClick={handleClick}
+>
+  Click me
+</Button>
+```
+
+### Input Component
+```tsx
+<Input
+  label="Email"
+  type="email"
+  value={email}
+  onChange={setEmail}
+  error={emailError}
+  required
+/>
+```
+
+## 🔐 Authentication
+
+Dự án sử dụng JWT token để xác thực:
+- Token được lưu trong localStorage
+- Redux Persist lưu trữ authentication state
+- Protected routes (sẽ được thêm sau)
+
+## 🛍️ Shopping Cart
+
+Tính năng giỏ hàng bao gồm:
+- Thêm sản phẩm vào giỏ
+- Cập nhật số lượng
+- Xóa sản phẩm
+- Tính tổng tiền
+- Persist cart data
+
+## 📱 Responsive Design
+
+Dự án được thiết kế responsive với Tailwind CSS:
+- Mobile-first approach
+- Breakpoints: sm, md, lg, xl
+- Flexible grid system
+
+## 🚀 Deployment
+
+### Build cho production
+```bash
+npm run build
+```
+
+### Deploy lên Vercel/Netlify
+1. Push code lên GitHub
+2. Connect với Vercel/Netlify
+3. Deploy tự động
+
+## 🔮 Roadmap
+
+### Phase 1 (Hiện tại)
+- [x] Setup project structure
+- [x] Authentication system
+- [x] Basic UI components
+- [x] Shopping cart functionality
+
+### Phase 2 (Tiếp theo)
+- [ ] Product detail page
+- [ ] Checkout process
+- [ ] Order management
+- [ ] Search and filtering
+
+### Phase 3 (Tương lai)
+- [ ] Payment integration
+- [ ] Admin dashboard
+- [ ] User reviews
+- [ ] PWA features
+
+## 🤝 Contributing
+
+1. Fork dự án
+2. Tạo feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to branch (`git push origin feature/AmazingFeature`)
+5. Tạo Pull Request
+
+## 📄 License
+
+Dự án này được phát hành dưới MIT License.
+
+## 👥 Team
+
+- **Developer**: [Your Name]
+- **Design**: Tailwind CSS
+- **Icons**: Heroicons
+
+---
+
+⭐ Nếu dự án này hữu ích, hãy cho chúng tôi một star! 
